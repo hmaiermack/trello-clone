@@ -1,3 +1,4 @@
+import { useContext } from "react"
 import { createContext, FC } from "react"
 
 type Task = {
@@ -54,4 +55,8 @@ export const AppStateProvider: FC = ({children}) => {
             {children}
         </AppStateContext.Provider>
     )
+}
+
+export const useAppState = () => {
+    return useContext(AppStateContext)
 }
